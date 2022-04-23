@@ -19,7 +19,7 @@ var id = user.telegramid
 var text = message
 const myArray = text.split(" ");
 var to = myArray[3]
-var mycoin = myArray[1]
+var mycoin = Number(myArray[1])
 let my = Libs.ResourcesLib.userRes("my");
 
 if (my.value() < mycoin) {
@@ -27,8 +27,15 @@ if (my.value() < mycoin) {
   return
 }
 
-my.takeFromAnother(user.telegramid, mycoin)
-my.transferTo(to, mycoin)
 
-Bot.sendMessage("تم");
+
+let too = Libs.ResourcesLib.anotherUserRes("my", to);
+
+
+too.add(mycoin)
+var newcoin = Number(my.value()) - Number(mycoin)
+
+Libs.ResourcesLib.userRes("my").set(newcoin)
+var toto = "تم تحويل " + mycoin + " $ بنجاح" + "\n\n" + "تم تحويل " + mycoin + " $ الى " + to + "\n\n" + "رصيدك الحالي " + newcoin + " $ " 
+Bot.sendMessage(toto);
 
