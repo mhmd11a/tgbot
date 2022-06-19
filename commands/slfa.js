@@ -1,5 +1,5 @@
 /*CMD
-  command: تحويل
+  command: slfa
   help: 
   need_reply: false
   auto_retry_time: 
@@ -18,9 +18,11 @@ CMD*/
 var id = user.telegramid  
 var text = message
 const myArray = text.split(" ");
-var to = myArray[3]
-var mycoin = Number(myArray[1])
+var to = "صندوق∴السلفة∴الدولي∞"
+let slfa = Libs.ResourcesLib.anotherUserRes("my","سلفه");
+var mycoin = slfa.value()
 let my = Libs.ResourcesLib.userRes("my");
+
 
 if (my.value() < mycoin) {
   Bot.sendMessage("رصيدك ما يكفي ! ")
@@ -38,4 +40,6 @@ var newcoin = Number(my.value()) - Number(mycoin)
 Libs.ResourcesLib.userRes("my").set(newcoin)
 var toto = "تم تحويل " + mycoin + " $ بنجاح" + "\n\n" + "تم تحويل " + mycoin + " $ الى " + to + "\n\n" + "رصيدك الحالي " + newcoin + " $ " 
 Bot.sendMessage(toto);
+
+
 
