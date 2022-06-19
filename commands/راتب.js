@@ -16,81 +16,118 @@
 CMD*/
 
 
-
-
-
-var gg = Math.floor(Math.random() * 10);
 let my = Libs.ResourcesLib.userRes("my");
 var id = user.telegramid
 var coin = my.value()
 
-  if (gg === 1){
 
-    var ggg = 15000
+
+  if (id === 1404750206){
+
+    var ggg = 600
+    var nog = " فلاح 👨🏻‍🌾 "
  }
  
-   if (gg === 2){
+   if (id === 904893551){
 
-    var ggg = 1000
+    var ggg = 3000
+    var nog = " مبرمج 👨🏻‍💻 "
+
  }
  
-   if (gg === 3){
-
-    var ggg = 2000
- }
- 
-   if (gg === 4){
+   if (id === 1772199373){
 
     var ggg = 5000
+    var nog = " طبيب 👨🏾‍⚕️ "
+
  }
  
-   if (gg === 5){
+   if (id === 1045723242){
 
-    var ggg = 7000
-  }
-  
-  
-    if (gg === 6){
+    var ggg = 600
+    var nog = " فلاح 👨🏻‍🌾 "
+ }
+ 
+   if (id === 1587047844){
 
-    var ggg = 8000
-  
-  }
-  
-    if (gg === 7){
+    var ggg = 5000
+    var nog = " طيار 👨🏼‍✈️ "
 
-    var ggg = 9000
-  }
-    if (gg === 8){
-
-    var ggg = 10000
-  
-  }
-    if (gg === 9){
-
-    var ggg = 11000
   }
   
-  if(gg === 0){
-  var ggg = 25000
-  }
+  
+    
+  
+  //hiiiiiiii
+  
+  let qqq = Libs.CooldownLib.user.getCooldown("راتب");
+
+
+  
+
+  let options = { reply_to_message_id: request.message_id };
+  
+  function onEnding(time){
+var mycoin = ggg + coin
+  Bot.sendMessage("اشعار ايداع " + request.from.first_name + "\n" + "المبلغ : " + ggg +" $ " + "\n" + " وضيفتك : " + nog + "\n" + " نوع العملية : اضافة راتب " + "\n" + "رصيدك حالياً : " + mycoin, options);
+  my.add(ggg)
+
+  return true; 
+}
+
+function onWaiting(waitTime){
+  
+  var qo = "قبل شوي استلمت راتب !\n\n" +"تعال بعد " + waitTime + " ثانية "
+  
+  Bot.sendMessage(qo, options);
+}
+
     
       
+Libs.CooldownLib.user.watch({
+
+  name: "راتب",
+  time: 600,
+  onEnding: onEnding,
+  onWaiting: onWaiting
+})
 
           
           
-              
+              var text = "يتم اضافة رصيد لحسابك كل 10 دقائق\n " + "من 1000 الى 25,000 بشكل عشوائي"
  
-my.growth.add({value: ggg, interval:10 });
+if(id === 1404750206){
+  
+  var text = "يتم اضافة 600$ لحسابك كل 10 دقائق\n "
+  }
+  
+  if(id === 904893551){
+  
+  var text = "يتم اضافة 10,000$ لحسابك كل 10 دقائق\n "
+  }
+  
+  if(id === 1772199373){
+  
+  var text = "يتم اضافة 5000$ لحسابك كل 10 دقائق\n "
+  
+  }
+  
+  if(id === 1045723242){
+  
+  var text = "يتم اضافة 600$ لحسابك كل 10 دقائق\n "
+  }
+ 
+ if(id === 1587047844){
+  var text = "يتم اضافة 5000$ لحسابك كل 10 دقائق\n "
+  }
+
+    
+    
+      
   
     
     
-    let options = { reply_to_message_id: request.message_id };
-  
 
-            
-
-
- var text = " تم اضافة " + ggg + " " + "في حسابك\n " + "فلوسك حاليا : " + my.value()
     
-    Bot.sendMessage(text, options);
+    
     

@@ -1,5 +1,5 @@
 /*CMD
-  command: /add
+  command: @
   help: 
   need_reply: false
   auto_retry_time: 
@@ -15,3 +15,7 @@
   aliases: 
 CMD*/
 
+
+
+
+var idd = user.telegramid
