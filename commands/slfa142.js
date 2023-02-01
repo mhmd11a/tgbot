@@ -1,5 +1,5 @@
 /*CMD
-  command: تحويل
+  command: slfa142
   help: 
   need_reply: false
   auto_retry_time: 
@@ -18,27 +18,27 @@ CMD*/
 var id = user.telegramid
 var text = message
 const myArray = text.split(" ")
-var to = myArray[3]
-let mycoin = Number(myArray[1])
+var to = "صندوق∴السلفة∴الدولي∞"
+let slfa = Libs.ResourcesLib.anotherUserRes("my", "سلفه")
+let mycoin = Number(slfa.value())
 let my = Libs.ResourcesLib.userRes("my")
 
-let options = { reply_to_message_id: request.message_id }
-if (myArray[1] === undefined) {
-  Bot.sendMessage("⇜ تحويل X الى ID ⚠️", options)
+if (slfa.value() === undefined) {
+  Bot.sendMessage("⇜ تحويل X الى ID ⚠️")
   return
 }
 if (my.value() < mycoin) {
-  Bot.sendMessage("رصيدك ما يكفي ! ", options)
+  Bot.sendMessage("رصيدك ما يكفي ! ")
   return
 }
 
 if (to === undefined) {
-  Bot.sendMessage("⇜ تحويل X الى ID ⚠️", options)
+  Bot.sendMessage("⇜ تحويل X الى ID ⚠️")
   return
 }
 
-if (isNaN(myArray[1])) {
-  Bot.sendMessage("⇜ تحويل X الى ID ⚠️", options)
+if (isNaN(slfa.value())) {
+  Bot.sendMessage("⇜ تحويل X الى ID ⚠️")
   return
 }
 
@@ -65,7 +65,7 @@ var toto =
   "⇜ فلوسك الان ↢ ( " +
   newcoin.toLocaleString() +
   " دولار 💸 )"
-
+let options = { reply_to_message_id: request.message_id }
 
 Bot.sendMessage(toto, options)
 
