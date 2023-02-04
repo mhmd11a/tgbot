@@ -1,17 +1,11 @@
 /*CMD
-  command: تحويل
+  command: btbybtbty
   help: 
-  need_reply: false
+  need_reply: 
   auto_retry_time: 
-  folder: 
-
-  <<ANSWER
-
-  ANSWER
-
-  <<KEYBOARD
-
-  KEYBOARD
+  folder: ضريبة
+  answer: 
+  keyboard: 
   aliases: 
 CMD*/
 
@@ -41,7 +35,6 @@ if (isNaN(myArray[1])) {
   Bot.sendMessage("⇜ تحويل X الى ID ⚠️", options)
   return
 }
-var ff = mycoin * 0.05
 
 let too = Libs.ResourcesLib.anotherUserRes("my", to)
 
@@ -50,9 +43,8 @@ var newcoin = Number(my.value()) - Number(mycoin)
 
 Libs.ResourcesLib.userRes("my").set(newcoin)
 var toto =
-  "تم تحويل " +
-  Number(mycoin).toLocaleString() +
-  " $ بنجاح ✅" +
+  "ضريبة التحويل 5% " +
+  "✅" +
   "\n\n" +
   "⇜ معلومات الحوالة ℹ️" +
   "\n" +
@@ -61,11 +53,11 @@ var toto =
   " دولار 💸 )" +
   "\n" +
   "⇜ الـــــى ↢ ( " +
-  to +
+  "البنك" +
   " ) \n" +
   "⇜ فلوسك الان ↢ ( " +
   newcoin.toLocaleString() +
   " دولار 💸 )"
-Bot.runCommand("btutttb " + mycoin)
+
 Bot.sendMessage(toto, options)
 

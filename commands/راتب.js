@@ -15,82 +15,54 @@
   aliases: 
 CMD*/
 
-
-
-
-
-var gg = Math.floor(Math.random() * 10);
-let my = Libs.ResourcesLib.userRes("my");
+let my = Libs.ResourcesLib.userRes("my")
 var id = user.telegramid
 var coin = my.value()
 
-  if (gg === 1){
+var ggg = 3000
+var nog = "مستخدم عادي"
 
-    var ggg = 15000
- }
- 
-   if (gg === 2){
+//hiiiiiiii
 
-    var ggg = 1000
- }
- 
-   if (gg === 3){
+let qqq = Libs.CooldownLib.user.getCooldown("راتب")
 
-    var ggg = 2000
- }
- 
-   if (gg === 4){
+let options = { reply_to_message_id: request.message_id }
 
-    var ggg = 5000
- }
- 
-   if (gg === 5){
+function onEnding(time) {
+  var mycoin = ggg + coin
+  Bot.sendMessage(
+    "اشعار ايداع " +
+      request.from.first_name +
+      "\n" +
+      "المبلغ : " +
+      ggg +
+      " $ " +
+      "\n" +
+      " وضيفتك : " +
+      nog +
+      "\n" +
+      " نوع العملية : اضافة راتب " +
+      "\n" +
+      "رصيدك حالياً : " +
+      mycoin.toLocaleString() +
+      " $ ",
+    options
+  )
+  my.add(ggg)
+  Bot.runCommand("btutttb " + ggg)
+  return true
+}
 
-    var ggg = 7000
-  }
-  
-  
-    if (gg === 6){
+function onWaiting(waitTime) {
+  var qo = "قبل شوي استلمت راتب !\n\n" + "تعال بعد " + waitTime + " ثانية "
 
-    var ggg = 8000
-  
-  }
-  
-    if (gg === 7){
+  Bot.sendMessage(qo, options)
+}
 
-    var ggg = 9000
-  }
-    if (gg === 8){
+Libs.CooldownLib.user.watch({
+  name: "راتب",
+  time: 600,
+  onEnding: onEnding,
+  onWaiting: onWaiting
+})
 
-    var ggg = 10000
-  
-  }
-    if (gg === 9){
-
-    var ggg = 11000
-  }
-  
-  if(gg === 0){
-  var ggg = 25000
-  }
-    
-      
-
-          
-          
-              
- 
-my.growth.add({value: ggg, interval:10 });
-  
-    
-    
-    let options = { reply_to_message_id: request.message_id };
-  
-
-            
-
-
- var text = " تم اضافة " + ggg + " " + "في حسابك\n " + "فلوسك حاليا : " + my.value()
-    
-    Bot.sendMessage(text, options);
-    

@@ -1,9 +1,9 @@
 /*CMD
-  command: /add
+  command: كم
   help: 
   need_reply: false
   auto_retry_time: 
-  folder: 
+  folder: bit
 
   <<ANSWER
 

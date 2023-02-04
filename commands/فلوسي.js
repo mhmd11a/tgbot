@@ -16,9 +16,19 @@
 CMD*/
 
 var id = user.telegramid
-let options = { reply_to_message_id: request.message_id };
-let my = Libs.ResourcesLib.userRes("my");
-Bot.sendMessage(my.value(), options)
-
-
+let options = { reply_to_message_id: request.message_id }
+let my = Libs.ResourcesLib.userRes("my")
+var mycoin =
+  " ⇜ فلوسك  " +
+  "```" +
+  Math.trunc(my.value()) +
+  "```" +
+  " دولار 💸 " +
+  "\n" +
+  " ⇜ فلوسك  " +
+  "" +
+  Math.trunc(my.value()).toLocaleString() +
+  "" +
+  " دولار 💸 "
+Bot.sendMessage(mycoin, options)
 
